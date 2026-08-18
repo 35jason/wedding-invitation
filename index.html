@@ -327,7 +327,7 @@
         position: absolute;
         inset: 0;
         z-index: 0;
-        background: url("images/couple_background.png") center/cover no-repeat;
+        background: url("images/couple_background.jpg") center/cover no-repeat;
         opacity: 0.08;
         filter: blur(2px);
       }
@@ -455,14 +455,14 @@
         padding: 4rem 2rem;
       }
       .carousel-container {
-        max-width: 550px;
+        max-width: 600px;
         margin: 0 auto;
         position: relative;
         overflow: hidden;
         border-radius: 16px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
         border: 3px solid rgba(201, 169, 110, 0.3);
-        aspect-ratio: 4/3;
+        aspect-ratio: 4/5;
       }
       .carousel-track {
         display: flex;
@@ -477,6 +477,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center 15%;
       }
       .carousel-dots {
         display: flex;
@@ -963,14 +964,15 @@
       .bottom-photo-section {
         position: relative;
         width: 100%;
-        height: 40vh;
-        min-height: 300px;
+        height: 60vh;
+        min-height: 400px;
         overflow: hidden;
       }
       .bottom-photo-section img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center 25%;
       }
       .bottom-photo-overlay {
         position: absolute;
@@ -1244,7 +1246,7 @@
       <!-- 📷 Photo 1: Top Hero Photo -->
       <div class="hero-photo-section">
         <img
-          src="images/couple_hero.png"
+          src="images/couple_hero.jpg"
           alt="泓富 & Uyên Wedding Photo"
           id="photo-top"
         />
@@ -1290,14 +1292,14 @@
           <div class="carousel-track" id="carouselTrack">
             <div class="carousel-slide">
               <img
-                src="images/couple_slide1.png"
+                src="images/couple_slide1.jpg"
                 alt="Wedding Photo 1"
                 id="photo-slide1"
               />
             </div>
             <div class="carousel-slide">
               <img
-                src="images/couple_slide2.png"
+                src="images/couple_slide2.jpg"
                 alt="Wedding Photo 2"
                 id="photo-slide2"
               />
@@ -1404,7 +1406,7 @@
               </p>
               <a
                 class="venue-link"
-                href="https://maps.app.goo.gl/UM1PC4YBPhg4C6bz9?g_st=ic"
+                href="https://maps.app.goo.gl/ThHXJsRMzKbdZSJQ9"
                 target="_blank"
                 >📍 Google Maps 導航</a
               >
@@ -1503,26 +1505,22 @@
           <div class="section-ornament"></div>
         </div>
         <p class="rsvp-text fade-in">
-          您的到來是我們最大的幸福<br />
-          敬請於 2026年8月19日 前回覆<br /><br />
+          您的到來是我們最大的幸福<br /><br />
           Sự hiện diện của bạn là niềm hạnh phúc lớn nhất của chúng tôi
         </p>
-        <button
+        <a
           class="rsvp-button fade-in"
-          onclick="
-            alert(
-              '感謝您的祝福！\nCảm ơn lời chúc của bạn! 🎉\n\n我們期待您的到來！\nChúng tôi mong chờ sự hiện diện của bạn!',
-            )
-          "
+          href="https://docs.google.com/forms/d/e/1FAIpQLSchz23YYoo-8dZUpwlvY6O6_m166_TlVSOxeeXpGgkElFjI6w/viewform?usp=publish-editor"
+          target="_blank"
         >
           出席確認 · Xác Nhận
-        </button>
+        </a>
       </section>
 
       <!-- 📷 Photo 5: Bottom Photo -->
       <div class="bottom-photo-section">
         <img
-          src="images/couple_bottom.png"
+          src="images/couple_bottom.jpg"
           alt="泓富 & Uyên"
           id="photo-bottom"
         />

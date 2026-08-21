@@ -49,223 +49,10 @@
         min-height: 100vh;
       }
 
-      /* ===== LOADING SCREEN ===== */
-      .loading-screen {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          135deg,
-          var(--cream) 0%,
-          var(--blush) 50%,
-          var(--cream-dark) 100%
-        );
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-        transition:
-          opacity 1s ease,
-          visibility 1s ease;
-      }
-      .loading-screen.hidden {
-        opacity: 0;
-        visibility: hidden;
-      }
-      .loading-heart {
-        font-size: 3rem;
-        animation: heartbeat 1.2s ease-in-out infinite;
-        color: var(--burgundy);
-      }
-      .loading-text {
-        font-family: "Great Vibes", cursive;
-        font-size: 2rem;
-        color: var(--gold);
-        margin-top: 1rem;
-      }
-
-      @keyframes heartbeat {
-        0%,
-        100% {
-          transform: scale(1);
-        }
-        25% {
-          transform: scale(1.15);
-        }
-        50% {
-          transform: scale(1);
-        }
-        75% {
-          transform: scale(1.1);
-        }
-      }
-
-      /* ===== ENVELOPE ===== */
-      .envelope-wrapper {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 8888;
-        background: linear-gradient(
-          135deg,
-          var(--cream) 0%,
-          #fdf6ee 50%,
-          var(--blush) 100%
-        );
-        transition:
-          opacity 1.2s ease,
-          visibility 1.2s ease;
-        cursor: pointer;
-      }
-      .envelope-wrapper.hidden {
-        opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
-      }
-      .envelope-container {
-        position: relative;
-        width: 400px;
-        height: 275px;
-        perspective: 800px;
-      }
-      .envelope-body {
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(145deg, #f5e6d3 0%, #e8d5b8 100%);
-        border-radius: 4px;
-        box-shadow:
-          0 15px 50px rgba(0, 0, 0, 0.15),
-          0 0 0 1px rgba(201, 169, 110, 0.3);
-        position: relative;
-        overflow: hidden;
-      }
-      .envelope-flap {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        background: linear-gradient(180deg, #f0dfc8, #e8d5b8);
-        transform-origin: top center;
-        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        clip-path: polygon(0 0, 50% 100%, 100% 0);
-        z-index: 2;
-      }
-      .envelope-flap::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: radial-gradient(circle, var(--gold), var(--gold-dark));
-        box-shadow: 0 0 15px rgba(201, 169, 110, 0.5);
-        opacity: 0.8;
-      }
-      .envelope-wrapper:hover .envelope-flap,
-      .envelope-wrapper.opening .envelope-flap {
-        transform: rotateX(180deg);
-      }
-      .envelope-card {
-        position: absolute;
-        top: 10%;
-        left: 10%;
-        width: 80%;
-        height: 80%;
-        background: white;
-        border-radius: 2px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-        z-index: 1;
-      }
-      .envelope-wrapper.opening .envelope-card {
-        transform: translateY(-150%);
-      }
-      .envelope-card-text {
-        font-family: "Great Vibes", cursive;
-        font-size: 1.5rem;
-        color: var(--gold-dark);
-      }
-      .envelope-card-names {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.1rem;
-        margin-top: 0.3rem;
-      }
-      .envelope-card-names .name-zh {
-        font-family: "Noto Serif TC", serif;
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: var(--charcoal);
-        letter-spacing: 4px;
-      }
-      .envelope-card-names .name-en {
-        font-family: "Cormorant Garamond", serif;
-        font-size: 0.85rem;
-        color: var(--text-light);
-        letter-spacing: 2px;
-        text-transform: uppercase;
-      }
-      .envelope-card-names .ampersand {
-        font-family: "Great Vibes", cursive;
-        font-size: 1.6rem;
-        color: var(--gold);
-        line-height: 0.8;
-        margin: 0.1rem 0;
-      }
-      .envelope-hint {
-        position: absolute;
-        bottom: 12%;
-        left: 50%;
-        transform: translateX(-50%);
-        font-family: "Noto Serif TC", serif;
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--gold-dark);
-        background: rgba(253, 248, 240, 0.95);
-        padding: 0.6rem 1.2rem;
-        border-radius: 30px;
-        border: 1px solid rgba(201, 169, 110, 0.4);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        letter-spacing: 3px;
-        animation: pulse 2s ease-in-out infinite;
-        white-space: nowrap;
-      }
-      @keyframes pulse {
-        0%,
-        100% {
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-          transform: translateX(-50%) scale(1);
-        }
-        50% {
-          box-shadow: 0 4px 25px rgba(201, 169, 110, 0.4);
-          transform: translateX(-50%) scale(1.05);
-        }
-      }
-
       /* ===== MAIN CONTENT ===== */
       .invitation-wrapper {
         max-width: 800px;
         margin: 0 auto;
-        opacity: 0;
-        transition: opacity 1.5s ease 0.5s;
-      }
-      .invitation-wrapper.visible {
-        opacity: 1;
       }
 
       /* ===== HERO PHOTO (TOP) ===== */
@@ -1104,6 +891,32 @@
           opacity: 1;
         }
       }
+      @keyframes heartbeat {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        25% {
+          transform: scale(1.15);
+        }
+        50% {
+          transform: scale(1);
+        }
+        75% {
+          transform: scale(1.1);
+        }
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+          transform: translateX(-50%) scale(1);
+        }
+        50% {
+          box-shadow: 0 4px 25px rgba(201, 169, 110, 0.4);
+          transform: translateX(-50%) scale(1.05);
+        }
+      }
 
       /* ===== WATERMARK ===== */
       .xi-watermark {
@@ -1181,10 +994,6 @@
         .details-card {
           padding: 2rem 1.5rem;
         }
-        .envelope-container {
-          width: 320px;
-          height: 220px;
-        }
       }
       @media (max-width: 480px) {
         .hero-name {
@@ -1198,10 +1007,6 @@
         section {
           padding: 3rem 1.5rem;
         }
-        .envelope-container {
-          width: 300px;
-          height: 206px;
-        }
         .countdown-number {
           font-size: 1.8rem;
         }
@@ -1212,31 +1017,6 @@
     </style>
   </head>
   <body>
-    <!-- Loading Screen -->
-    <div class="loading-screen" id="loadingScreen">
-      <div class="loading-heart">💕</div>
-      <div class="loading-text">Hạnh Phúc Bắt Đầu...</div>
-    </div>
-
-    <!-- Envelope -->
-    <div class="envelope-wrapper" id="envelopeWrapper">
-      <div class="envelope-container">
-        <div class="envelope-body">
-          <div class="envelope-card">
-            <div class="envelope-card-text">Thiệp Mời</div>
-            <div class="envelope-card-names">
-              <div class="name-zh">陳泓富</div>
-              <div class="name-en">CHEN HUNG FU</div>
-              <div class="ampersand">&</div>
-              <div class="name-zh">Vũ Thị Uyên</div>
-              <div class="name-en">VU THI UYEN</div>
-            </div>
-          </div>
-          <div class="envelope-flap"></div>
-        </div>
-      </div>
-      <div class="envelope-hint">點擊開啟 ✦ Nhấn để mở</div>
-    </div>
 
     <div class="particles-container" id="particles"></div>
     <div class="xi-watermark">囍</div>
@@ -1542,20 +1322,9 @@
     <div class="music-btn" id="musicBtn" title="播放音樂">🎵</div>
 
     <script>
-      // Loading & Envelope
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          document.getElementById("loadingScreen").classList.add("hidden");
-        }, 2000);
-      });
-      const envelopeWrapper = document.getElementById("envelopeWrapper");
-      envelopeWrapper.addEventListener("click", () => {
-        envelopeWrapper.classList.add("opening");
-        setTimeout(() => {
-          envelopeWrapper.classList.add("hidden");
-          document.getElementById("invitation").classList.add("visible");
-          createParticles();
-        }, 1500);
+      // 網頁載入時直接啟動愛心飄落動畫
+      document.addEventListener("DOMContentLoaded", () => {
+        createParticles();
       });
 
       // Countdown
